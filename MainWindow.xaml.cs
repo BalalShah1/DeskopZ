@@ -36,6 +36,8 @@ namespace WpfApp2
             GetProcessorInfo();
             GetRamInfo();
             CenterWindowOnScreen();
+            GetGPUInfo();
+
         }
 
         private void CenterWindowOnScreen()
@@ -75,21 +77,45 @@ namespace WpfApp2
                 var processorCache = (provider["Description"]);
                 var processorType = (provider["SystemName"]);
 
-
-
-
                 lblProcessorStatus.Text = "Processor Status : " + "  " + processorStatus.ToString();
                 lblProcessorClockSpeed.Text = "Clock Speed : " + "  " + processorSpeed.ToString() + " " + "MHz";
-                lblProcessorFamily.Text = processorFamily.ToString();
+                lblProcessorFamily.Text = "CPU: " + "  " + processorFamily.ToString();
                 lblProcessorVoltage.Text = "Cores : " + "  " + processorCores.ToString();
-                lblProcessorCache.Text = processorCache.ToString();
-                lblProcessorType.Text = processorType.ToString();
-
-
-
+                lblProcessorCache.Text = "Revision : " + "  " + processorCache.ToString();
+                lblProcessorType.Text = "Desktop Name : " + "  " + processorType.ToString();
             }
         }
         #endregion
+
+
+
+        #region // GPU
+
+        private void GetGPUInfo()
+        {
+            var wmi = new System.Management.ManagementClass("Win32_VideoController");
+            var providers = wmi.GetInstances();
+
+            foreach (var provider in providers)
+            {
+                var gpuName = (provider["Description"]);
+                var gpuMemory = (provider["DriverVersion"]);
+                var gpuSpec = (provider["Status"]);
+                var gpuMem = (provider["VideoModeDescription"]);
+
+
+                lblGPUName.Text = "GPU : " + "  " + gpuName.ToString();
+                lblGPURAM.Text = "Driver version : " + "  " + gpuMemory.ToString();
+                lblGPUSpec.Text = "GPU Status : " + "  " + gpuSpec.ToString();
+                lblGPUMem.Text = "Resolution : " + "  " + gpuMem.ToString();
+            }
+        }
+
+
+
+
+        #endregion
+
 
         #region // Ram info
 
@@ -103,7 +129,7 @@ namespace WpfApp2
                 var ramCapacity = Convert.ToInt16(provider["Availability"]);
 
 
-//                lblRAMSize.Text = ramCapacity.ToString();
+                //                lblRAMSize.Text = ramCapacity.ToString();
             }
         }
 
