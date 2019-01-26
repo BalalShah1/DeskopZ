@@ -36,8 +36,9 @@ namespace WpfApp2
             GetProcessorInfo();
             GetRamInfo();
             CenterWindowOnScreen();
-            GetGPUInfo();
-
+            GetGpuInfo();
+            GetRamCapacity();
+            GetMotherboardInfo();
         }
 
         private void CenterWindowOnScreen()
@@ -65,7 +66,7 @@ namespace WpfApp2
 
         private void GetProcessorInfo()
         {
-            var wmi = new System.Management.ManagementClass("Win32_Processor");
+            var wmi = new ManagementClass("Win32_Processor");
             var providers = wmi.GetInstances();
 
             foreach (var provider in providers)
@@ -91,9 +92,9 @@ namespace WpfApp2
 
         #region // GPU
 
-        private void GetGPUInfo()
+        private void GetGpuInfo()
         {
-            var wmi = new System.Management.ManagementClass("Win32_VideoController");
+            var wmi = new ManagementClass("Win32_VideoController");
             var providers = wmi.GetInstances();
 
             foreach (var provider in providers)
@@ -121,21 +122,52 @@ namespace WpfApp2
 
         private void GetRamInfo()
         {
-            var wmi = new System.Management.ManagementClass("Win32_MemoryDevice");
+            var wmi = new ManagementClass("Win32_PhysicalMemory");
             var providers = wmi.GetInstances();
 
             foreach (var provider in providers)
             {
-                var ramCapacity = Convert.ToInt16(provider["Availability"]);
+                var ramSpeed = Convert.ToInt32(provider["Speed"]);
+
+                lblRAM.Text = "RAM Speed : " + "  " + ramSpeed.ToString() + " MHz";
+            }
+        }
+
+        #endregion
 
 
-                //                lblRAMSize.Text = ramCapacity.ToString();
+        #region  // RAM Capacity
+
+        private void GetRamCapacity()
+        {
+            var wmi = new ManagementClass("Win32_MemoryDevice");
+            var providers = wmi.GetInstances();
+
+
+            foreach (var provider in providers)
+            {
+                var ramCapacity = Convert.ToInt64(provider["NumberOfBlocks"]);
+
+                lblRAMCapacity.Text = ramCapacity.ToString();
+            }
+        }
+
+        #endregion
+
+        #region // Motherboard Info
+
+        private void GetMotherboardInfo()
+        {
+            var wmi = new ManagementClass("Win32_MotherboardDevice");
+            var providers = wmi.GetInstances();
+
+
+            foreach (var provider in providers)
+            {
+
             }
         }
 
         #endregion
     }
-
-
-
 }
