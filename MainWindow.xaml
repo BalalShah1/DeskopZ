@@ -6,17 +6,20 @@
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
         ResizeMode="CanMinimize"
+        
         WindowStyle="None"
         AllowsTransparency="True"
         
         
+        
         Title="DesktopZ" Height="552.295" Width="963" Background="#FF25232A">
 
-    <Grid Margin="10,0,2,-21" Height="542" VerticalAlignment="Bottom" >
+    <Grid Margin="10,0,0,10" Height="532" VerticalAlignment="Bottom" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="22*"/>
             <ColumnDefinition Width="23*"/>
-            <ColumnDefinition Width="876*"/>
+            <ColumnDefinition Width="769*"/>
+            <ColumnDefinition Width="106*"/>
             <ColumnDefinition Width="31*"/>
         </Grid.ColumnDefinitions>
 
@@ -26,24 +29,31 @@
             <RowDefinition Height="439*"/>
         </Grid.RowDefinitions>
 
-        <local:ProgressBar x:Name="rpbCPU" HorizontalAlignment="Left" Height="200" Margin="317,19,0,0" VerticalAlignment="Top" Width="210" RenderTransformOrigin="-1.77,-0.47" IndicatorBrush="#3EB872" Background="#FF25232A" Grid.RowSpan="2" Grid.Column="2"/>
-        <TextBlock x:Name="lblCPUPercent"  HorizontalAlignment="Left" Margin="389,2,0,0" VerticalAlignment="Top" Width="115" FontSize="24" Foreground="#3EB872" Height="50" Grid.Row="1" Grid.Column="2"/>
-        <TextBlock x:Name="lblProcessorFamily" HorizontalAlignment="Left" Margin="10,224,0,0" TextWrapping="NoWrap" Text="TextBlock" VerticalAlignment="Top" Foreground="#FFC1C1C1" FontSize="16" Grid.Row="1" Grid.ColumnSpan="3"/>
-        <TextBlock x:Name="lblProcessorStatus" HorizontalAlignment="Left" Margin="10,379,0,0" TextWrapping="NoWrap" Text="TextBlock" VerticalAlignment="Top" Foreground="#FFC1C1C1" FontSize="16" Grid.Row="1" Grid.ColumnSpan="3"/>
-        <TextBlock x:Name="lblProcessorClockSpeed" HorizontalAlignment="Left" Margin="10,305,0,0" TextWrapping="NoWrap" Text="TextBlock" VerticalAlignment="Top" Foreground="#FFC1C1C1" FontSize="16" Grid.Row="1" Grid.ColumnSpan="3"/>
-        <TextBlock x:Name="lblProcessorVoltage" HorizontalAlignment="Left" Margin="10,341,0,0" TextWrapping="NoWrap" Text="TextBlock" VerticalAlignment="Top" Foreground="#FFC1C1C1" FontSize="16" Grid.Row="1" Grid.ColumnSpan="3"/>
-        <TextBlock x:Name="lblProcessorCache" HorizontalAlignment="Left" Margin="10,267,0,0" TextWrapping="NoWrap" Text="TextBlock" VerticalAlignment="Top" Foreground="#FFC1C1C1" FontSize="16" Grid.Row="1" Grid.ColumnSpan="3"/>
-        <TextBlock x:Name="lblProcessorType" HorizontalAlignment="Left" Margin="10,183,0,0" TextWrapping="NoWrap" Text="TextBlock" VerticalAlignment="Top" Foreground="#FFC1C1C1" FontSize="16" Grid.Row="1" Grid.ColumnSpan="3"/>
-        <TextBlock x:Name="lblGPUName" HorizontalAlignment="Left" Margin="503,183,0,0" TextWrapping="NoWrap" Text="TextBlock" VerticalAlignment="Top" Foreground="#FFC1C1C1" FontSize="16" Grid.Row="1" Grid.Column="2"/>
-        <TextBlock x:Name="lblGPURAM" HorizontalAlignment="Left" Margin="503,224,0,0" TextWrapping="NoWrap" Text="TextBlock" VerticalAlignment="Top" Foreground="#FFC1C1C1" FontSize="16" Grid.Row="1" Grid.Column="2"/>
-        <TextBlock x:Name="lblGPUSpec" HorizontalAlignment="Left" Margin="503,267,0,0" TextWrapping="NoWrap" Text="TextBlock" VerticalAlignment="Top" Foreground="#FFC1C1C1" FontSize="16" Grid.Row="1" Grid.Column="2"/>
-        <TextBlock x:Name="lblGPUMem" HorizontalAlignment="Left" Margin="503,305,0,0" TextWrapping="NoWrap" Text="TextBlock" VerticalAlignment="Top" Foreground="#FFC1C1C1" FontSize="16" Grid.Row="1" Grid.Column="2"/>
-        <TextBlock x:Name="lblRAM" HorizontalAlignment="Left" Margin="503,341,0,0" TextWrapping="NoWrap" Text="TextBlock" VerticalAlignment="Top" Foreground="#FFC1C1C1" FontSize="16" Grid.Row="1" Grid.Column="2"/>
-        <TextBlock x:Name="lblRAMCapacity" HorizontalAlignment="Left" Margin="503,379,0,0" TextWrapping="NoWrap" Text="TextBlock" VerticalAlignment="Top" Foreground="#FFC1C1C1" FontSize="16" Grid.Row="1" Grid.Column="2"/>
-        <Label Content="DESKTOP" HorizontalAlignment="Left" Margin="0,-25,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="179" FontSize="36" Foreground="#FF3EAF70" FontWeight="Bold" FontStyle="Italic"/>
-        <Label Content="Z" Grid.Column="2" HorizontalAlignment="Left" Margin="119,-25,0,0" VerticalAlignment="Top" FontSize="36" Foreground="#FFDB2853" FontWeight="Bold" FontStyle="Italic"/>
-        <Label Content="X" Grid.Column="2" Margin="870,-20,11,0" VerticalAlignment="Top" FontSize="26" Grid.ColumnSpan="2" Foreground="#FFA1A0B6"/>
-        <Label Content="_" Grid.Column="2" HorizontalAlignment="Left" Margin="844,-25,0,0" VerticalAlignment="Top" FontSize="26" Foreground="#FFA1A0B6"/>
+        <local:ProgressBar x:Name="rpbCPU" HorizontalAlignment="Left" Height="200" Margin="317,74,0,0" VerticalAlignment="Top" Width="210" RenderTransformOrigin="-1.77,-0.47" IndicatorBrush="#3EB872" Background="#FF25232A" Grid.RowSpan="2" Grid.Column="2"/>
+        <TextBlock x:Name="lblCPUPercent"  HorizontalAlignment="Left" Margin="389,51,0,0" VerticalAlignment="Top" Width="78" FontSize="36" Foreground="#3EB872" Height="50" Grid.Row="1" Grid.Column="2"/>
+        <TextBlock x:Name="lblProcessorFamily" HorizontalAlignment="Left" Margin="10,252,0,0" TextWrapping="NoWrap" Text="TextBlock" VerticalAlignment="Top" Foreground="#FFC1C1C1" FontSize="16" Grid.Row="1" Grid.ColumnSpan="3"/>
+        <TextBlock x:Name="lblProcessorStatus" HorizontalAlignment="Left" Margin="10,407,0,0" TextWrapping="NoWrap" Text="TextBlock" VerticalAlignment="Top" Foreground="#FFC1C1C1" FontSize="16" Grid.Row="1" Grid.ColumnSpan="3"/>
+        <TextBlock x:Name="lblProcessorClockSpeed" HorizontalAlignment="Left" Margin="10,333,0,0" TextWrapping="NoWrap" Text="TextBlock" VerticalAlignment="Top" Foreground="#FFC1C1C1" FontSize="16" Grid.Row="1" Grid.ColumnSpan="3"/>
+        <TextBlock x:Name="lblProcessorVoltage" HorizontalAlignment="Left" Margin="10,369,0,0" TextWrapping="NoWrap" Text="TextBlock" VerticalAlignment="Top" Foreground="#FFC1C1C1" FontSize="16" Grid.Row="1" Grid.ColumnSpan="3"/>
+        <TextBlock x:Name="lblProcessorCache" HorizontalAlignment="Left" Margin="10,295,0,0" TextWrapping="NoWrap" Text="TextBlock" VerticalAlignment="Top" Foreground="#FFC1C1C1" FontSize="16" Grid.Row="1" Grid.ColumnSpan="3"/>
+        <TextBlock x:Name="lblProcessorType" HorizontalAlignment="Left" Margin="10,211,0,0" TextWrapping="NoWrap" Text="TextBlock" VerticalAlignment="Top" Foreground="#FFC1C1C1" FontSize="16" Grid.Row="1" Grid.ColumnSpan="3"/>
+        <TextBlock x:Name="lblGPUName" HorizontalAlignment="Left" Margin="531,211,0,0" TextWrapping="NoWrap" Text="TextBlock" VerticalAlignment="Top" Foreground="#FFC1C1C1" FontSize="16" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Width="330"/>
+        <TextBlock x:Name="lblGPURAM" HorizontalAlignment="Left" Margin="531,252,0,0" TextWrapping="NoWrap" Text="TextBlock" VerticalAlignment="Top" Foreground="#FFC1C1C1" FontSize="16" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Width="330"/>
+        <TextBlock x:Name="lblGPUSpec" HorizontalAlignment="Left" Margin="531,295,0,0" TextWrapping="NoWrap" Text="TextBlock" VerticalAlignment="Top" Foreground="#FFC1C1C1" FontSize="16" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Width="330"/>
+        <TextBlock x:Name="lblGPUMem" HorizontalAlignment="Left" Margin="531,333,0,0" TextWrapping="NoWrap" Text="TextBlock" VerticalAlignment="Top" Foreground="#FFC1C1C1" FontSize="16" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Width="330"/>
+        <TextBlock x:Name="lblRAM" HorizontalAlignment="Left" Margin="531,369,0,0" TextWrapping="NoWrap" Text="TextBlock" VerticalAlignment="Top" Foreground="#FFC1C1C1" FontSize="16" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Width="330"/>
+        <TextBlock x:Name="lblRAMCapacity" HorizontalAlignment="Left" Margin="531,407,0,0" TextWrapping="NoWrap" Text="TextBlock" VerticalAlignment="Top" Foreground="#FFC1C1C1" FontSize="16" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Width="330"/>
+        <Label Content="DESKTOP" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="179" FontSize="36" Foreground="#FF3EAF70" FontWeight="Bold" FontStyle="Italic" Margin="0,-12,0,0"/>
+        <Label Content="Z" Grid.Column="2" HorizontalAlignment="Left" Margin="119,-12,0,0" VerticalAlignment="Top" FontSize="36" Foreground="#FFDB2853" FontWeight="Bold" FontStyle="Italic"/>
+        <Label Content="X" Grid.Column="3" Margin="101,-6,11,0" VerticalAlignment="Top" FontSize="26" Grid.ColumnSpan="2" Foreground="#FFA1A0B6"/>
+        <Label Content="_" Grid.Column="3" HorizontalAlignment="Left" Margin="75,-11,0,0" VerticalAlignment="Top" FontSize="26" Foreground="#FFA1A0B6"/>
+        <Separator HorizontalAlignment="Left" Height="100" Margin="-10,195,0,0" Grid.Row="1" VerticalAlignment="Top" Width="963" Grid.ColumnSpan="5" Background="#FF201D23"/>
+        <Separator HorizontalAlignment="Left" Height="100" Margin="-10,278,0,0" Grid.Row="1" VerticalAlignment="Top" Width="963" Grid.ColumnSpan="5" Background="#FF201D23"/>
+        <Separator HorizontalAlignment="Left" Height="100" Margin="-10,316,0,0" Grid.Row="1" VerticalAlignment="Top" Width="963" Grid.ColumnSpan="5" Background="#FF201D23"/>
+        <Separator HorizontalAlignment="Left" Height="100" Margin="-10,348,0,-18" Grid.Row="1" VerticalAlignment="Top" Width="963" Grid.ColumnSpan="5" Background="#FF201D23"/>
+        <Separator HorizontalAlignment="Left" Height="100" Margin="-10,153,0,0" Grid.Row="1" VerticalAlignment="Top" Width="963" Grid.ColumnSpan="5" Background="#FF201D23"/>
+        <Separator HorizontalAlignment="Left" Height="100" Margin="-10,-10,0,0" VerticalAlignment="Top" Width="963" Grid.ColumnSpan="5" Background="#FF201D23"/>
+        <Separator HorizontalAlignment="Left" Height="100" Margin="-10,237,0,0" Grid.Row="1" VerticalAlignment="Top" Width="963" Grid.ColumnSpan="5" Background="#FF201D23"/>
     </Grid>
 
 
